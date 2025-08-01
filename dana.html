@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nomor Rekening Pembayaran</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #dbe9ff, #f0f4ff);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+    }
+    h1 {
+      color: #0056b3;
+      margin-bottom: 20px;
+    }
+    .rekening {
+      font-size: 17px;
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      font-size: 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn-copy {
+      background-color: #007bff;
+      color: #fff;
+    }
+    .btn-copy:hover {
+      background-color: #0056b3;
+    }
+    .btn-home {
+      background-color: #6c757d;
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+    }
+    .btn-home:hover {
+      background-color: #5a6268;
+    }
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 22px;
+      }
+      .rekening {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Informasi Rekening</h1>
+    <div class="rekening" id="rekening-info">
+      <strong>E-Wallet:</strong> DANA<br>
+      <strong>Nama:</strong> Rexz Official<br>
+      <strong>Nomor Rekening:</strong> <span id="nomor">0882 - 9471 - 1296</span>
+    </div>
+    <button class="btn btn-copy" onclick="salinRekening()">Salin Nomor Rekening</button>
+    <a class="btn btn-home" href="https://rexznyx.github.io/web-rexz-store/">Kembali ke Menu Utama</a>
+  </div>
+
+  <script>
+    function salinRekening() {
+      const nomor = document.getElementById("nomor").innerText;
+      navigator.clipboard.writeText(nomor).then(() => {
+        alert("✅ Nomor rekening berhasil disalin!");
+      }).catch(() => {
+        alert("❌ Gagal menyalin nomor rekening.");
+      });
+    }
+  </script>
+
+</body>
+</html>
